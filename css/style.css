@@ -17,7 +17,7 @@
 .page-content-guide {
   color: white;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding-bottom: 20pt;
 }
 
@@ -25,6 +25,7 @@
   color: white;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.7rem;
+  padding-left: 10pt;
   padding-top: 5pt;
   padding-bottom: 5pt;
 }
@@ -38,11 +39,12 @@
 }
 
 .page-content-return {
+  color: white;
   padding-top: 10pt;
 }
 
 body {
-  background-color: rgb(110 197 251);
+  background-color: rgb(125 205 255);
 }
 
 img {

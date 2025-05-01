@@ -3,18 +3,18 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Ticket price for Museum, with PHP" />
+  <meta name="description" content="Types of Triangle, with PHP" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Ain Jeong" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-deep_purple.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.yellow-indigo.min.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <title>Ticket price for Museum, with PHP</title>
+  <title>Types of Triangle, with PHP</title>
 </head>
 
 <body>
@@ -22,44 +22,48 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Ticket price for Museum, with PHP</span>
+        <span class="mdl-layout-title">Types of Triangle, with PHP</span>
       </div>
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <img src="./images/student-discount.png" alt="student discount image" width="250" />
+        <img src="./images/triangles.png" alt="Triangles image" width="500" />
       </div>
       <br />
-      <div class="page-content-guide">Enter in your age</div>
-      <div class="page-content-php">
+      <div class="page-content-guide">Please enter the three lengths of your triangle.</div>
+      <div class="page-content">
         <form action="./answer.php" method="GET">
+          <label>Side a: </label>
           <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="user-age" />
-            <label class="mdl-textfield__label" for="user-age">Your age</label>
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="side-a" />
+            <label class="mdl-textfield__label" for="side-a">Enter without the unit</label>
             <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
           <br />
-          <div class="page-content-guide">Please select what day it is today</div>
+          <label>Side b: </label>
           <div class="mdl-textfield mdl-js-textfield">
-            <select class="mdl-textfield__input" name="day">
-              <option value="Monday">Monday</option>
-              <option value="tuesday">Tuesday</option>
-              <option value="wednesday">Wednesday</option>
-              <option value="thursday">Thursday</option>
-              <option value="friday">Friday</option>
-              <option value="saturday">Saturday</option>
-              <option value="sunday">Sunday</option>
-            </select>
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="side-b" />
+            <label class="mdl-textfield__label" for="side-b">Enter without the unit</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
           </div>
           <br />
-          <!-- Accent-colored raised button with ripple -->
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            type="submit">
-            Check age
-          </button>
-        </form>
+          <label>Side c: </label>
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" name="side-c" />
+            <label class="mdl-textfield__label" for="side-c">Enter without the unit</label>
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+          <br />
       </div>
-    </main>
+      <br />
+      <!-- Accent-colored raised button with ripple -->
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+        type="submit">
+        Check
+      </button>
+      </form>
+  </div>
+  </main>
   </div>
 </body>
 

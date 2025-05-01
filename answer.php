@@ -3,18 +3,18 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Ticket price for Museum, with PHP" />
+  <meta name="description" content="Types of Triangle, with PHP" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Ain Jeong" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-deep_purple.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.yellow-indigo.min.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <link rel="manifest" href="site.webmanifest" />
-  <title>Ticket price for Museum, with PHP</title>
+  <title>Types of Triangle, with PHP</title>
 </head>
 
 <body>
@@ -22,24 +22,58 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Ticket price for Museum, with PHP</span>
+        <span class="mdl-layout-title">Types of Triangle, with PHP</span>
       </div>
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <img src="./images/student-discount.png" alt="Student discount image" width="250" />
+        <img src="./images/triangles.png" alt="Triangles image" width="500" />
       </div>
       <div class="page-content-answer">
         <div id="answer">
           <?php
           // input
-          $userAge = $_GET["user-age"];
-          $day = $_GET["day"];
-          // process
-          if (($userAge >= 12 && $userAge <= 21) || $day == 'tuesday' || $day == 'thursday') {
-            echo 'If you are ' . $userAge . ' years old and it is ' . $day . ' today, You are eligible for the student pricing!';
+          $sideA = $_GET["side-a"];
+          $sideB = $_GET["side-b"];
+          $sideC = $_GET["side-c"];
+
+          // using the cosine law
+          $angleA = acos(($sideB ** 2 + $sideC ** 2 - $sideA ** 2) / (2 * $sideB * $sideC)) *
+            (180 / M_PI);
+          $angleB = acos(($sideC ** 2 + $sideA ** 2 - $sideB ** 2) / (2 * $sideC * $sideA)) *
+            (180 / M_PI);
+          $angleC = acos(($sideA ** 2 + $sideB ** 2 - $sideC ** 2) / (2 * $sideA * $sideB)) *
+            (180 / M_PI);
+
+          $sumOfAngles = round($angleA, 2) + round($angleB, 2) + round($angleC, 2);
+
+          if ($sumOfAngles == 180) {
+            // process
+            if ($sideA == $sideB && $sideA == $sideC && $sideB == $sideC) {
+              // output
+              echo 'If your sides are: ' .
+                'Side a = ' . $sideA . ', ' .
+                'Side b = ' . $sideB . ', and' .
+                'Side c = ' . $sideC .
+                ', This is an Equilateral Triangle.';
+            } else if ($sideA === $sideC || $sideA === $sideB || $sideB === $sideC) {
+              // output
+              echo 'If your sides are: ' .
+                'Side a = ' . $sideA . ', ' .
+                'Side b = ' . $sideB . ', and' .
+                'Side c = ' . $sideC .
+                ', This is an Isosceles Triangle.';
+            } else {
+              // output
+              echo 'If your sides are: ' .
+                'Side a = ' . $sideA . ', ' .
+                'Side b = ' . $sideB . ', and' .
+                'Side c = ' . $sideC .
+                ', This is a Scalene Triangle.';
+            }
           } else {
-            echo 'If you are ' . $userAge . ' years old and it is ' . $day . ' today, You must pay regular price.';
+            // output
+            echo 'This is not a triangle.';
           }
           ?>
         </div>
