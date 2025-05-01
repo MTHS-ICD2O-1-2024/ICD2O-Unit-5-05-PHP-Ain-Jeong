@@ -53,21 +53,21 @@
               // output
               echo 'If your sides are: ' .
                 'Side a = ' . $sideA . ', ' .
-                'Side b = ' . $sideB . ', and' .
+                'Side b = ' . $sideB . ', and ' .
                 'Side c = ' . $sideC .
                 ', This is an Equilateral Triangle.';
             } else if ($sideA === $sideC || $sideA === $sideB || $sideB === $sideC) {
               // output
               echo 'If your sides are: ' .
                 'Side a = ' . $sideA . ', ' .
-                'Side b = ' . $sideB . ', and' .
+                'Side b = ' . $sideB . ', and ' .
                 'Side c = ' . $sideC .
                 ', This is an Isosceles Triangle.';
             } else {
               // output
               echo 'If your sides are: ' .
                 'Side a = ' . $sideA . ', ' .
-                'Side b = ' . $sideB . ', and' .
+                'Side b = ' . $sideB . ', and ' .
                 'Side c = ' . $sideC .
                 ', This is a Scalene Triangle.';
             }
